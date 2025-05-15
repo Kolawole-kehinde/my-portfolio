@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+      },
+      backgroundImage: {
+        'ShowcaseImg': "url('/images/grid-wire-frame.svg')",
+      },
+    },
   },
   plugins: [],
 }

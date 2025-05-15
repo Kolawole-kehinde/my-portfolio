@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-4 left-0 w-full z-50 px-4 flex justify-center">
-      <nav className="w-full max-w-3xl bg-white/20 backdrop-blur-md border border-white/30 rounded-xl shadow-md px-6 py-3">
+      <nav className="w-full max-w-3xl bg-white/20 backdrop-blur-md border-2 border-black rounded-xl shadow-md px-6 py-3">
     
         <div className="flex items-center justify-between md:justify-center md:gap-10">
           
