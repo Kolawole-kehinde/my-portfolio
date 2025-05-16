@@ -6,6 +6,7 @@ import Services from './Components/Services';
 import PortfolioCards from './Components/PortfolioCards';
 import Testimonials from './Components/Testimonials';
 import ContactSection from './Components/Contact';
+import Footer from './Components/layout/Footer';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
        <PortfolioCards/>
        <Testimonials/>
        <ContactSection/>
+       <Footer/>
     </div>
     
   )
