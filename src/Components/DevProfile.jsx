@@ -1,4 +1,5 @@
 import React from "react";
+import TechStackCard from "./TechStackCard";
 
 const DevProfile = () => {
   return (
@@ -68,7 +69,7 @@ const DevProfile = () => {
               </div>
             </div>
             <div className="rounded-2xl h-[300px] font-roboto shadow-2xl p-6 flex-1 bg-gradient-to-tr from-gray-100 via-white to-purple-500 py-5">
-              <h3 className="text-xl font-medium mb-4">What Drives Me</h3>
+              <h3 className="text-2xl font-medium mb-4 text-purple-500">What Drives Me</h3>
               <p className="text-gray-800 text-xl font-semibold">
                 I’m passionate about the intersection of design 🎨 and development 💻.
                 I believe the best digital experiences are built with a deep
@@ -79,6 +80,10 @@ const DevProfile = () => {
             </div>
           </div>
         </div>
+
+    <div className="shadow-2xl">
+          <TechStackCard/>
+    </div>
       </div>
       
     </section>
