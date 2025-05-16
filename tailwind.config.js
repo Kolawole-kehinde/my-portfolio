@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 export default {
   content: [
     "./index.html",
@@ -11,15 +11,10 @@ export default {
       },
       backgroundImage: {
         'ShowcaseImg': "url('/images/grid-wire-frame.svg')",
-      },
-      backgroundImage: {
         'collabo': "url('/images/bg1.jpg')",
-      },
-      backgroundImage: {
         'bgImage': "url('/images/bg2.png')",
       },
     },
   },
   plugins: [],
- 
 }

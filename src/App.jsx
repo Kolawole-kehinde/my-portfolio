@@ -4,6 +4,7 @@ import Hero from './Components/Hero';
 import DevProfile from './Components/DevProfile';
 import Services from './Components/Services';
 import PortfolioCards from './Components/PortfolioCards';
+import Testimonials from './Components/Testimonials';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
        <DevProfile/>
        <Services/>
        <PortfolioCards/>
+       <Testimonials/>
     </div>
     
   )
