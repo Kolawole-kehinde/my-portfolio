@@ -5,6 +5,7 @@ import DevProfile from './Components/DevProfile';
 import Services from './Components/Services';
 import PortfolioCards from './Components/PortfolioCards';
 import Testimonials from './Components/Testimonials';
+import ContactSection from './Components/Contact';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
        <Services/>
        <PortfolioCards/>
        <Testimonials/>
+       <ContactSection/>
     </div>
     
   )
