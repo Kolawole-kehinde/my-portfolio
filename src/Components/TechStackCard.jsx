@@ -7,7 +7,7 @@ const TechStackCard = () => {
       <div className="bg-white rounded-2xl shadow-2xl px-6 py-12 flex-1 relative">
         <h2 className="text-2xl font-bold mb-1">My Tech Stack</h2>
         <p className="text-sm text-gray-500 mb-6">Always Evolving My Tech Stack</p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 relative">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 relative  ">
           <div className="flex items-center justify-center px-4 py-2 rounded-xl border border-gray-200 shadow-2xl bg-white text-gray-800 font-medium">
             <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React" className="w-5 h-5 mr-2" />
             ReactJs
@@ -37,7 +37,7 @@ const TechStackCard = () => {
       </div>
 
       {/* Collaboration Card */}
-      <div className="bg-gradient-to-br from-purple-500 via-blue-500 to-green-400 space-y-4 text-white text-center rounded-2xl shadow-2xl py-6 w-full md:max-w-[300px] relative overflow-hidden">
+      <div className="bg-collabo h-auto bg-cover bg-no-repeat space-y-4 text-white text-center rounded-2xl shadow-2xl py-14 w-full md:max-w-[300px] relative overflow-hidden">
         <h3 className="text-xl font-semibold">I'm Committed to</h3>
         <p className="text-lg font-medium">Collaboration and </p>
         <p className="text-lg font-medium">Clear Communication</p>
