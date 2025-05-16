@@ -1,11 +1,31 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import toast from "react-hot-toast";
+import { contactSchema } from "../constant/Schema";
+import CustomInput from "./CustomInput";
+import ContactInfo from "./ContactInfo";
 import { contactDetails } from "./contactDetails";
 import { contactFormFields } from "../constant/contactFormFields";
 
-
 const ContactSection = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm({
+    resolver: zodResolver(contactSchema),
+  });
+
+  const onSubmit = (data) => {
+    console.log("Form Data:", data);
+    toast.success("Message sent!");
+    reset();
+  };
+
   return (
-      <section>
+    <section>
       <div className="wrapper bg-white text-black flex flex-col md:flex-row items-start justify-center gap-8 p-6 md:p-12 font-roboto min-h-screen">
         {/* Left Section */}
         <div className="flex-1 space-y-4">
@@ -22,22 +42,7 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Info Box */}
-          <div className="bg-bgImage bg-cover bg-no-repeat rounded-xl space-y-4 p-4 text-black shadow-xl relative overflow-hidden h-[250px]">
-            <div className="space-y-3 relative z-10">
-              {contactDetails?.map(({ icon, label, value }, index) => (
-                <div
-                  key={index}
-                  className="bg-[#d8c5fe] p-2 rounded-xl flex  items-start gap-3 w-fit"
-                >
-                  <div className="pt-1">{icon}</div>
-                  <div>
-                    <p className="font-bold text-lg">{label}</p>
-                    <p className="text-sm break-words">{value}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <ContactInfo details={contactDetails} />
         </div>
 
         {/* Right Section - Contact Form */}
@@ -46,41 +51,51 @@ const ContactSection = () => {
             Let’s work{" "}
             <span className="text-purple-600 font-bold">together!</span>
           </h2>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit(onSubmit)} noValidate>
             <div className="flex flex-col md:flex-row gap-4">
               {contactFormFields.slice(0, 2).map(({ name, type, placeholder }) => (
-                <input
+                <CustomInput
                   key={name}
+                  register={register}
                   name={name}
                   type={type}
                   placeholder={placeholder}
-                  className="flex-1 border border-purple-400 rounded-md p-3 outline-none focus:ring-2 focus:ring-purple-500"
+                  error={errors[name]}
                 />
               ))}
             </div>
             <div className="flex flex-col md:flex-row gap-4">
               {contactFormFields.slice(2).map(({ name, type, placeholder }) => (
-                <input
+                <CustomInput
                   key={name}
+                  register={register}
                   name={name}
                   type={type}
                   placeholder={placeholder}
-                  className="flex-1 border border-purple-400 rounded-md p-3 outline-none focus:ring-2 focus:ring-purple-500"
+                  error={errors[name]}
                 />
               ))}
             </div>
-            <textarea
-              placeholder="Message"
-              rows={4}
-              className="w-full border border-purple-400 rounded-md p-3 outline-none focus:ring-2 focus:ring-purple-500"
-            />
+            <div className="flex flex-col">
+              <textarea
+                {...register("message")}
+                placeholder="Message"
+                rows={4}
+                className={`w-full border rounded-md p-3 outline-none focus:ring-2 focus:ring-purple-500
+                  ${errors.message ? "border-red-500" : "border-purple-400"}`}
+              />
+              {errors.message && (
+                <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+              )}
+            </div>
             <div className="flex items-center justify-center">
-            <button
-              type="submit"
-              className="bg-gradient-to-r from-purple-600   to-indigo-600 text-white px-6 py-3 rounded-md shadow-md hover:brightness-110 transition-all duration-200"
-            >
-              Send Now
-            </button>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-md shadow-md hover:brightness-110 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? "Sending..." : "Send Now"}
+              </button>
             </div>
           </form>
         </div>
