@@ -4,7 +4,7 @@ import { TbBrandFiverr } from "react-icons/tb";
 
 
 const stats = [
-  { label: "Years Of Experience", end: 6 },
+  { label: "Years Of Experience", end: 2 },
   { label: "Completed projects", end: 150 },
   { label: "Awards", end: 12 },
   { label: "Clients Worldwide", end: 321 },
@@ -28,9 +28,6 @@ function Hero() {
   return (
     <section >
       <div className="relative wrapper rounded-3xl bg-gradient-to-br from-purple-200 via-white to-white py-16 px-4 md:px-8 flex flex-col md:flex-row items-center gap-10 mt-10 overflow-hidden">
-
-     
-      {/* <div className="absolute flex top-0 left-1/3 w-[300px] h-[300px] bg-purple-200 rounded-full blur-[200px] -z-10" /> */}
 
 
       <div className="flex flex-col md:flex-row md:space-x-10 lg:ml-20 w-full items-center md:items-start">

@@ -21,14 +21,14 @@ const PortfolioCards = () => {
       {/* Header */}
       <header className="text-center max-w-2xl mb-10 text-white">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">My Recent Projects</h1>
-        <p className="text-base md:text-lg leading-relaxed text-gray-300 max-w-md mx-auto line-clamp-2">
+        <p className="text-base md:text-lg leading-relaxed text-gray-300 max-w-2xl">
           Explore my latest work, blending creativity and code for functional,
           responsive websites with clean design and seamless user experiences.
         </p>
       </header>
 
       {/* Cards Grid */}
-      <main className="grid grid-cols-1 md:grid-cols-2 gap-8 place-items-center">
+      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
         {cards?.map((card, idx) => (
           <article
             key={idx}
