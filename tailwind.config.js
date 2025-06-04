@@ -14,6 +14,7 @@ export default {
         'collabo': "url('/images/bg1.jpg')",
         'bgImage': "url('/images/bg2.png')",
       },
+      
     },
   },
   plugins: [],

@@ -1,22 +1,6 @@
 export const contactFormFields = [
-  {
-    name: "firstName",
-    type: "text",
-    placeholder: "First name",
-  },
-  {
-    name: "lastName",
-    type: "text",
-    placeholder: "Last name",
-  },
-  {
-    name: "email",
-    type: "email",
-    placeholder: "Email address",
-  },
-  {
-    name: "phone",
-    type: "tel",
-    placeholder: "Phone number",
-  },
+  { name: "name", type: "text", placeholder: "Full Name" },
+  { name: "email", type: "email", placeholder: "Email Address" },
+  { name: "phone", type: "tel", placeholder: "Phone Number" },
+  { name: "subject", type: "text", placeholder: "Subject" },
 ];

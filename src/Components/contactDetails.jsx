@@ -16,6 +16,6 @@ export const contactDetails = [
   {
     icon: <GrLocationPin fontSize={24} className="text-red-500" />,
     label: "Address",
-    value: "Ikaje, Lagos, Nigeria",
+    value: "Lagos, Nigeria.",
   },
 ];

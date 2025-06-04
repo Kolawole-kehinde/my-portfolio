@@ -2,11 +2,11 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
-import { contactSchema } from "../constant/Schema";
 import CustomInput from "./CustomInput";
 import ContactInfo from "./ContactInfo";
 import { contactDetails } from "./contactDetails";
 import { contactFormFields } from "../constant/contactFormFields";
+import { contactSchema } from "../constant/Schema";
 
 const ContactSection = () => {
   const {
