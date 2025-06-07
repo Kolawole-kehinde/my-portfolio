@@ -7,16 +7,47 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
+import 'animate.css/animate.min.css';
+import { Fade } from 'react-awesome-reveal';
+import { useInView } from 'react-intersection-observer';
+
 const Services = () => {
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.2 });
+
   return (
-    <div className="wrapper py-12 bg-white px-4 lg:px-0 font-roboto">
-      <div className="flex flex-col items-center justify-center py-8 text-center space-y-4">
-        <h1 className="text-4xl md:text-5xl font-bold">
-          My <span className="text-purple-500">Services</span>
-        </h1>
-        <p className="w-full max-w-[800px] text-sm md:text-xl text-gray-700">
-          Elevate your digital presence with expertly crafted frontend solutions that blend stunning design with flawless functionality. From responsive layouts to seamless interactivity, I build experiences that captivate and engage users on every device.
-        </p>
+    <section id='services' className="wrapper py-12 bg-white px-4 lg:px-0 font-roboto">
+      <div
+        ref={ref}
+        className="flex flex-col items-center justify-center py-8 text-center space-y-4"
+      >
+        <Fade
+          triggerOnce={false}
+          direction="down"  // from top means animating downwards
+          duration={800}
+          delay={100}
+          cascade={false}
+          when={inView}
+        >
+          <h1 className="text-4xl md:text-5xl font-bold">
+            My <span className="text-purple-500">Services</span>
+          </h1>
+        </Fade>
+
+        <Fade
+          triggerOnce={false}
+          direction="up"  // from bottom means animating upwards
+          duration={800}
+          delay={300}
+          cascade={false}
+          when={inView}
+        >
+          <p className="w-full max-w-[800px] text-sm md:text-xl text-gray-700">
+            Elevate your digital presence with expertly crafted frontend
+            solutions that blend stunning design with flawless functionality.
+            From responsive layouts to seamless interactivity, I build
+            experiences that captivate and engage users on every device.
+          </p>
+        </Fade>
       </div>
 
       <Swiper
@@ -51,16 +82,16 @@ const Services = () => {
         ))}
       </Swiper>
 
-   <style jsx>{`
-  :global(.swiper-pagination-bullet) {
-    background: #ccc;
-    opacity: 1;
-  }
-  :global(.swiper-pagination .swiper-pagination-bullet-active) {
-    background: #9333ea !important; /* purple-600 */
-  }
-`}</style>
-    </div>
+      <style jsx>{`
+        :global(.swiper-pagination-bullet) {
+          background: #ccc;
+          opacity: 1;
+        }
+        :global(.swiper-pagination .swiper-pagination-bullet-active) {
+          background: #9333ea !important; /* purple-600 */
+        }
+      `}</style>
+    </section>
   );
 };
 

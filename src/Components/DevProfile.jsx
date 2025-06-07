@@ -1,6 +1,5 @@
 import React from "react";
 import TechStackCard from "./TechStackCard";
-
 import { useInView } from "react-intersection-observer";
 import { Slide, Fade, Zoom } from "react-awesome-reveal";
 
@@ -11,9 +10,9 @@ const DevProfile = () => {
   const [techRef, techInView] = useInView({ triggerOnce: false, threshold: 0.3 });
 
   return (
-    <section className="py-10">
+    <section className="py-10" id="about">
       <div className="wrapper">
-        <div className="flex flex-col md:flex-row items-center gap-6">
+        <div className="flex flex-col md:flex-row md:items-stretch items-center gap-6">
 
           {/* Left Profile Card */}
           <div
@@ -56,13 +55,13 @@ const DevProfile = () => {
             </Slide>
           </div>
 
-          {/* Right Side - Developer Code Card & What Drives Me Card */}
-          <div className="flex flex-col items-center md:flex-row gap-4 bg-ShowcaseImg bg-center bg-cover bg-no-repeat w-full h-auto rounded-2xl shadow-2xl p-4 ">
+          {/* Right Side */}
+          <div className="flex flex-col md:flex-col lg:flex-row gap-4 bg-ShowcaseImg bg-center bg-cover bg-no-repeat w-full h-auto rounded-2xl shadow-2xl p-4">
 
-            {/* Developer Code Card with drop-from-top */}
+            {/* Developer Code Card */}
             <div
               ref={codeRef}
-              className="w-full max-w-[5000px] lg:w-[300px] md:my-5 rounded-2xl shadow-2xl bg-white/90"
+              className="w-full lg:w-[300px] md:w-full rounded-2xl shadow-2xl bg-white/90"
             >
               <Slide
                 direction="down"
@@ -112,7 +111,7 @@ const DevProfile = () => {
             {/* What Drives Me Card */}
             <div
               ref={drivesRef}
-              className="rounded-2xl h-[300px] font-roboto shadow-2xl p-6 flex-1 bg-gradient-to-tr from-gray-100 via-white to-purple-500 py-5"
+              className="rounded-2xl h-auto font-roboto shadow-2xl p-6 flex-1 bg-gradient-to-tr from-gray-100 via-white to-purple-500 py-5"
             >
               <Fade
                 triggerOnce={false}
@@ -136,7 +135,7 @@ const DevProfile = () => {
         </div>
 
         {/* TechStackCard */}
-        <div ref={techRef} className="shadow-2xl mt-10 ">
+        <div ref={techRef} className="shadow-2xl mt-10">
           <Zoom
             triggerOnce={false}
             duration={1200}
