@@ -27,6 +27,10 @@ const socialLinks = [
   { icon: FiTwitter, href: "https://twitter.com" },
   { icon: FiLinkedin, href: "https://linkedin.com" },
   { icon: HiOutlineMail, href: "mailto:contact@example.com" },
+  { icon: FiGithub, href: "https://github.com" },
+  { icon: FiTwitter, href: "https://twitter.com" },
+  { icon: FiLinkedin, href: "https://linkedin.com" },
+  { icon: HiOutlineMail, href: "mailto:contact@example.com" },
 ];
 
 const FooterLinkSection = ({ links }) => (
@@ -71,20 +75,21 @@ const Footer = () => {
               Crafting responsive, high-performance websites with clean code and a user-focused approach.
             </p>
             <div className="overflow-hidden border-2 border-purple-600 rounded-lg py-2">
-              <div className="flex space-x-10 animate-marquee min-w-max">
-                {socialLinks.map(({ icon: Icon, href }, i) => (
-                  <a
-                    key={i}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-6 h-6 flex items-center justify-center text-2xl text-gray-400 hover:text-white transition-colors"
-                  >
-                    <Icon />
-                  </a>
-                ))}
-              </div>
-            </div>
+  <div className="flex space-x-6 animate-marquee min-w-max">
+    {socialLinks.map(({ icon: Icon, href }, i) => (
+      <a
+        key={i}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-6 h-6 flex items-center justify-center text-2xl text-gray-400 hover:text-white transition-colors"
+      >
+        <Icon />
+      </a>
+    ))}
+  </div>
+</div>
+
           </div>
         </Fade>
 
