@@ -16,7 +16,7 @@ const slideFromLeft = keyframes`
 `;
 
 const buttonColors = {
-  purple: "bg-purple-500 hover:bg-purple-600",
+  purple: "bg-orange-500 hover:bg-purple-600",
   blue: "bg-blue-500 hover:bg-blue-600",
   pink: "bg-pink-500 hover:bg-pink-600",
 };
@@ -65,12 +65,12 @@ const PortfolioCards = () => {
               triggerOnce={false}
               {...props}
             >
-              <div className="w-[350px] bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col transform transition-transform hover:scale-[1.03]">
+              <div className="w-[350px] h-auto bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col transform transition-transform hover:scale-[1.03]">
                 <div className="relative">
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="w-full h-60 object-cover"
+                    className="w-full h-60 object-contain p-4"
                   />
                 </div>
                 <div className="p-4 flex flex-col justify-between flex-grow bg-gray-100">
