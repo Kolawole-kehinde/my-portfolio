@@ -6,10 +6,10 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
 const stats = [
-  { label: "Years Of Experience", end: 2 },
-  { label: "Completed projects", end: 150 },
-  { label: "Awards", end: 12 },
-  { label: "Clients Worldwide", end: 321 },
+  { label: "Years of Experience", end: 1 },
+  { label: "Web Projects Built", end: 10 },
+  { label: "Internships & Training", end: 2 },
+  { label: "Skills & Tools Mastered", end: 8 },
 ];
 
 function Hero() {
