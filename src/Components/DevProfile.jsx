@@ -2,6 +2,7 @@ import React from "react";
 import TechStackCard from "./TechStackCard";
 import { useInView } from "react-intersection-observer";
 import { Slide, Fade, Zoom } from "react-awesome-reveal";
+import { FaCheckCircle } from "react-icons/fa";
 
 const DevProfile = () => {
   const [leftRef, leftInView] = useInView({ triggerOnce: false, threshold: 0.3 });
@@ -12,7 +13,7 @@ const DevProfile = () => {
   return (
     <section className="py-10" id="about">
       <div className="wrapper">
-        <div className="flex flex-col md:flex-row md:items-stretch items-center gap-6">
+        <div className="flex flex-col md:flex-row md:items-stretch items-center gap-6 font-roboto">
 
           {/* Left Profile Card */}
           <div
@@ -29,27 +30,25 @@ const DevProfile = () => {
             >
               <div className="shadow-2xl flex items-center justify-start gap-6 px-4 py-2 rounded-3xl mb-6">
                 <img
-                  src="/images/me.png"
+                  src="/images/khennycool.png"
                   alt="Profile"
                   className="size-16 rounded-full animate__animated animate__pulse animate__infinite animate__slow hover:animate__bounce"
                 />
                 <div>
-                  <h1>Kolawole Kehinde</h1>
-                  <p>Software Engineer</p>
+                  <h1 className="text-lg font-semibold">Kolawole Kehinde</h1>
+                  <p className="text-base ml-1">Software Engineer</p>
                 </div>
               </div>
-              <h4 className="mt-4">Passionate</h4>
-              <p>Developer and</p>
-              <p>Lifelong Learner</p>
-              <p className="my-4">
-                I adapt to different time zones to make sure communication is smooth,
-                no matter where you're located.
+              <h4 className="text-lg font-medium mb-4 flex gap-2 items-center"> <FaCheckCircle className="text-purple-500" /> Dedicated</h4>
+              <p className="text-lg font-medium flex gap-2 items-center mb-4">  <FaCheckCircle className="text-purple-500" />Problem Solver and</p>
+              <p className="text-base text-gray-700 leading-relaxed">
+                I adapt to challenges quickly to keep communication clear and smooth, no matter where you’re located.
               </p>
               <div>
                 <img
                   src="/images/window.svg"
                   alt=""
-                  className="absolute -bottom-14 -right-8 "
+                  className="absolute -bottom-16 -right-8 "
                 />
               </div>
             </Slide>
@@ -91,7 +90,7 @@ const DevProfile = () => {
                       <span className="text-red-400">"Kolawole"</span>,
                     </p>
                     <p className="ml-4">
-                      <span className="text-green-600">abs</span>:{" "}
+                      <span className="text-green-600">nickname</span>:{" "}
                       <span className="text-red-400">"Khennycool"</span>,
                     </p>
                     <p className="ml-4">
@@ -122,12 +121,8 @@ const DevProfile = () => {
                 key={drivesInView ? "visible-drives" : "hidden-drives"}
               >
                 <h3 className="text-2xl font-medium mb-4 text-purple-500">What Drives Me</h3>
-                <p className="text-gray-800 text-xl font-semibold">
-                  I’m passionate about the intersection of design 🎨 and development 💻.
-                  I believe the best digital experiences are built with a deep
-                  understanding of the user 🧑‍💻 and a commitment to innovation ✨.
-                  Whether working on a simple landing page or a complex web app, I bring
-                  precision 🎯, creativity 🧠, and a user-first mindset to every project.
+                <p className="text-gray-800 text-xl">
+                  What drives me is the perfect blend of design and development, creating digital experiences that truly connect with users. I’m fueled by curiosity, a deep understanding of user needs, and a passion for innovation that shapes every project. From crafting simple landing pages to building complex web applications, I bring precision, creativity, and a user-first mindset to deliver solutions that are not only functional but memorable.
                 </p>
               </Fade>
             </div>

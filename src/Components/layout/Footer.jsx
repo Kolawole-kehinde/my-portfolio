@@ -2,9 +2,6 @@ import React from "react";
 import {
   FaHome, FaInfoCircle, FaServer, FaProjectDiagram,
 } from "react-icons/fa";
-import {
-  MdPrivacyTip, MdOutlinePolicy, MdCookie,
-} from "react-icons/md";
 import { RiContactsBookLine } from "react-icons/ri";
 import { FiGithub, FiTwitter, FiLinkedin } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
@@ -12,24 +9,20 @@ import { Link } from "react-router-dom";
 import { Fade, Slide } from "react-awesome-reveal";
 
 const navLinks = [
-  { icon: <FaHome />, label: "Home", to: "/" },
-  { icon: <FaInfoCircle />, label: "About", to: "/about" },
-  { icon: <FaServer />, label: "Services", to: "/services" },
-  { icon: <FaProjectDiagram />, label: "Projects", to: "/projects" },
+  { icon: <FaHome />, label: "Home", to: "#home" },
+  { icon: <FaInfoCircle />, label: "About", to: "#about" },
+  { icon: <FaServer />, label: "Services", to: "#services" },
+  
 ];
 
+// Policy and route-based links
 const policyLinks = [
-  { icon: <RiContactsBookLine />, label: "Contact", to: "/contact" },
-  { icon: <MdPrivacyTip />, label: "Privacy Policy", to: "/privacy-policy" },
-  { icon: <MdOutlinePolicy />, label: "Terms and Condition", to: "/terms" },
-  { icon: <MdCookie />, label: "Cookie Policy", to: "/cookie-policy" },
+ { icon: <FaProjectDiagram />, label: "Projects", to: "#projects" },
+  { icon: <RiContactsBookLine />, label: "Contact", to: "#contact" },
 ];
 
+// Social icons
 const socialLinks = [
-  { icon: FiGithub, href: "https://github.com" },
-  { icon: FiTwitter, href: "https://twitter.com" },
-  { icon: FiLinkedin, href: "https://linkedin.com" },
-  { icon: HiOutlineMail, href: "mailto:contact@example.com" },
   { icon: FiGithub, href: "https://github.com" },
   { icon: FiTwitter, href: "https://twitter.com" },
   { icon: FiLinkedin, href: "https://linkedin.com" },
@@ -41,7 +34,11 @@ const FooterLinkSection = ({ links }) => (
     {links.map(({ icon, to, label }) => (
       <li key={label} className="flex items-center hover:text-purple-400 transition-colors">
         <span className="mr-2">{icon}</span>
-        <Link to={to}>{label}</Link>
+        {to.startsWith("#") ? (
+          <a href={to}>{label}</a>
+        ) : (
+          <Link to={to}>{label}</Link>
+        )}
       </li>
     ))}
   </ul>
@@ -50,9 +47,9 @@ const FooterLinkSection = ({ links }) => (
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-8 px-4 sm:px-6 lg:px-8 select-none">
-      <div className="max-w-7xl mx-auto grid grid-cols-1  lg:grid-cols-3 gap-8">
-
-        {/* Left - Navigation Links */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        {/* Left - Navigation & Policy Links */}
         <Slide direction="left">
           <div>
             <h3 className="text-xl font-bold mb-4">
@@ -67,13 +64,13 @@ const Footer = () => {
           </div>
         </Slide>
 
-        {/* Middle - Description and Social Icons */}
+        {/* Center - Description & Social Icons */}
         <Fade>
           <div className="flex flex-col justify-between">
             <p className="text-gray-300 mb-6">
               Crafting responsive, high-performance websites with clean code and a user-focused approach.
             </p>
-            <div className="overflow-hidden border-2 border-purple-600 rounded-lg py-2 ">
+            <div className="overflow-hidden border-2 border-purple-600 rounded-lg py-2">
               <div className="flex space-x-10 animate-marquee min-w-max">
                 {socialLinks.map(({ icon: Icon, href }, i) => (
                   <a

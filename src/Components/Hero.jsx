@@ -63,11 +63,7 @@ function Hero() {
             <h2 className="text-xl sm:text-2xl font-semibold">Hi 👋, I'm Kehinde</h2>
             <h1 className="text-3xl md:text-4xl font-bold">Frontend Developer</h1>
             <p className="text-base sm:text-lg text-gray-700">
-              I specialize in building modern, responsive, and user-friendly web
-              interfaces. With a passion for clean code and seamless user
-              experiences, I turn ideas into digital solutions that not only look
-              great but also perform flawlessly. Let’s work together to bring your
-              vision to life!
+             I specialize in turning ideas into sleek, responsive websites that combine clean code with seamless user experiences. With a focus on modern design principles and performance, I create digital solutions that are not only visually appealing but also functional across all devices. Whether you're starting from scratch or improving an existing project, I'm here to help bring your vision to life—one intuitive interface at a time. Let’s build something great together.
             </p>
 
             {/* Social Marquee + Contact Button */}
